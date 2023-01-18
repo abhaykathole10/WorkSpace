@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" style="background-color: #2E1503;">
+    <div class="container">
+        <a href="#" class="navbar-brand">My WORKSPACE</a>
+
+        <!-- Navbar using Bootstrap-->
+        <div class="collapse navbar-collapse" id="navmenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <div *ngIf="!inLogin">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/employee-registration" routerLinkActive="active">Employee Registration</a>
+                    </li>
+                </div>
+
+                <div *ngIf="!inLogin">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/employee-login" routerLinkActive="active">Employee login</a>
+                    </li>
+                </div>
+
+                <div *ngIf="!inLogin">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin-login" routerLinkActive="active">Admin login</a>
+                    </li>
+                </div>
+
+                <div *ngIf="inLogin">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/employee-dashboard">
+                            Apply for Leave</a>
+                    </li>
+                </div>
+
+                <div *ngIf="inLogin">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="" (click)="leavesHistory()">
+                            Application History</a>
+                    </li>
+                </div>
+
+                <div *ngIf="inLogin">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="" (click)="empLogout()">
+                            Employee logout</a>
+                    </li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</nav>

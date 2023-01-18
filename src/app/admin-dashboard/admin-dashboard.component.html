@@ -1,0 +1,37 @@
+<div class="container">
+
+  <table class="table table-hover">
+    
+    <thead>
+      <tr>
+        <th scope="col">Application id</th>
+        <th scope="col">Employee name</th>
+        <th scope="col">Leave needed(Days)</th>
+        <th scope="col">Cause</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let row of empData">
+        <td>{{row.applicationId}}</td>
+        <td>{{row.name}}</td>
+        <td>{{row.days}}</td>
+        <td>{{row.cause}}</td>
+        <td>{{row.status}}
+          <div *ngIf = "!(row.status == 'Approved' || row.status == 'Rejected')">
+            <button class="btn btn-success " type="button" (click)="approveLeave(row.applicationId)">Approve</button>
+            <button class="btn btn-danger" type="button" (click)="rejectLeave(row.applicationId)">Reject</button>
+          </div>
+        </td>
+
+        <!-- <td *ngIf = "showStatus">
+          {{printStatus}}
+        </td> -->
+        
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
